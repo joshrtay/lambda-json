@@ -1,0 +1,21 @@
+{
+  "name": "lambda-json",
+  "description": "Convert JSON with embedded functions to static JSON.",
+  "repository": "git://github.com/joshrtay/lambda-json.git",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "postversion": "git push && git push --tags && npm publish --access=public"
+  },
+  "dependencies": {
+    "@f/is-function": "^1.1.1",
+    "@f/is-generator": "^1.3.2",
+    "@f/is-object": "^1.1.4"
+  },
+  "devDependencies": {
+    "@f/sleep": "^1.0.0",
+    "co": "^4.6.0",
+    "tape": "^4.2.2"
+  }
+}
