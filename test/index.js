@@ -61,3 +61,21 @@ test('should resolve generators', (t) => {
   })
 
 })
+
+test('should resolve iterator', (t) => {
+  var obj = {
+    foo: (function * (props) {
+      yield sleep(10)
+      return props.foo
+    })({foo: 'woot'})
+  }
+
+  lambdaJSON(obj, {foo: 'bar'}).then(function (val) {
+    console.log('val', val)
+    t.deepEqual(val, {foo: 'woot'})
+    t.end()
+  }).catch(function (err) {
+    console.log('err', err)
+  })
+
+})
